@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar"
 import Hero from "./sections/Hero"
+import HeroTwo from "./sections/HeroTwo"
+import KashmirTours from "./sections/KashmirTours"
+import TopDestinations from "./sections/TopDestinations"
 
 
 const App = () => {
@@ -9,6 +12,9 @@ const App = () => {
         <Navbar />
       </div>
       <Hero/>
+      <KashmirTours/>
+      <HeroTwo/>
+      <TopDestinations/>
     </div>
   )
 }
