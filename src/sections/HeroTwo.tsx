@@ -10,11 +10,11 @@ const HeroTwo = () => {
         viewport={{once:true}}
         transition={{duration: 1}}
          className="text-center">
-            <h1 className="mt-8 text-2xl text-black font-bold">Why Choose Us?</h1>
+            <h1 className="mt-8 text-3xl tracking-tight text-black font-bold">Why Choose Us?</h1>
         </motion.div>
 
         <div className="flex justify-center w-full h-fit mt-3">
-            <div className="grid w-[95%] lg:w-[80%] gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+            <div className="grid w-[95%] lg:w-[80%] gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 {whyChooseUs.map((item)=>(
                     <WhyCard
                     key={item.title}

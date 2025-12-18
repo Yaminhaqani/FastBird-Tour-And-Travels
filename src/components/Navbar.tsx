@@ -1,14 +1,17 @@
-
+import { motion } from "motion/react"
 const Navbar = () => {
   return (
-    <nav className="w-full h-14 md:h-17.5 flex items-center justify-center overflow-hidden backdrop-blur-md bg-black/10 border-b border-white/20 z-50">
-
+    <motion.nav
+    initial={{y:-60}}
+    animate={{y:0}}
+    transition={{type:"spring", stiffness: 120, damping: 6}}
+     className="w-full h-15 md:h-17.5 flex items-center justify-center overflow-hidden backdrop-blur-md bg-black/10 border-b border-white/20 z-50">
       <img
-      className="h-40 w-fit object-contain"
+      className="h-45 w-fit object-contain"
        src="src/assets/logo.png"
         alt="logo"/>
 
-    </nav>
+    </motion.nav>
   )
 }
 

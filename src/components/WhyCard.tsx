@@ -16,7 +16,7 @@ export const WhyCard = ({
      <motion.div
     initial={{opacity: 0, y: 50}}
     whileInView={{opacity: 1, y: 0,  boxShadow:
-      "-10px -15px 20px -9px rgba(0,0,0,0.7)" }}
+      "0 10px 25px -5px rgba(0,0,0,0.4), 0 8px 10px -6px rgba(0,0,0,0.4)" }}
     whileHover={{scale:1.02 ,y:-6,}}
     whileTap={{scale:0.9}}
     viewport={{amount: 0.3, once: true}}
@@ -34,7 +34,7 @@ export const WhyCard = ({
             <Icon className="h-8 w-8 text-orange-500" />
         </CardHeader>
 
-          <CardTitle className="text-lg text-white font-semibold z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+          <CardTitle className="text-xl tracking-tight text-white font-semibold z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
         {title}
       </CardTitle>
 

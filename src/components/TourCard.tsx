@@ -27,7 +27,7 @@ export function TourCard({
     <motion.div
     initial={{opacity: 0, y: 50}}
     whileInView={{opacity: 1, y: 0,  boxShadow:
-      "-10px -15px 20px -9px rgba(0,0,0,0.7)" }}
+      "0 10px 25px -5px rgba(0,0,0,0.4), 0 8px 10px -6px rgba(0,0,0,0.4)" }}
     whileHover={{scale:1.02 ,y:-6,}}
     whileTap={{scale:0.9}}
     viewport={{amount: 0.3, once: true}}
@@ -46,11 +46,11 @@ export function TourCard({
       {/* CONTENT */}
       <div className="w-full pt-0.5 pb-4 backdrop-blur-md bg-black/10 border border-white/10 shadow-xl">
       <CardHeader className="space-y-1">
-        <CardTitle className="text-lg text-gray-50 ">{title}</CardTitle>
+        <CardTitle className="text-xl tracking-tight text-gray-50 font-play">{title}</CardTitle>
       </CardHeader>
 
       <CardContent className="flex items-center justify-between text-sm">
-        <span className="font-medium text-gray-300">{duration}</span>
+        <span className="font-medium font-play text-gray-300">{duration}</span>
       </CardContent>
 
       {/* TAGS */}
@@ -58,7 +58,7 @@ export function TourCard({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full text-gray-200 border border-white/10 bg-white/20 px-3 py-1 text-xs font-medium"
+            className="rounded-full text-gray-200 font-play border border-white/10 bg-white/20 px-3 py-1 text-xs font-medium"
           >
             {tag}
           </span>
