@@ -15,8 +15,26 @@
   --font-play:  "Playfair", serif;
 }
 
+/* Fix browser autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(253, 230, 138, 0.8); /* amber-200/60 */
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-play);
+    overflow-x: hidden;
 }
 
 
@@ -194,5 +212,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes fly {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
 
 

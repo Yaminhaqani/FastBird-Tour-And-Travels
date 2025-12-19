@@ -9,7 +9,7 @@ const Guests = () => {
           Our Guests
         </h1>
 
-      <div className="w-[95vw] lg:w-[84%] h-[50vh] lg:h-[65vh] overflow-hidden mx-auto mt-3 mb-8 px-4">
+      <div className="w-[99vw] lg:w-[84%] h-[50vh] lg:h-[65vh] overflow-hidden mx-auto mt-3 mb-8 px-4">
       <DomeGallery
       images={guestImgs} 
       grayscale={false}
