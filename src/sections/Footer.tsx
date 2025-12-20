@@ -8,6 +8,7 @@ import { IoMail } from "react-icons/io5";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import GlassIcons from "@/components/ui/GlassIcons";
 import { motion } from "motion/react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const socials = [
@@ -99,8 +100,8 @@ const Footer = () => {
           <div className="w-full flex justify-start md:justify-center overflow-hidden">
             <img
               className="w-60 -ml-4 md:ml-0 md:-mt-3 lg:-mt-2 h-15 object-cover"
-              src="src/assets/logo.png"
-              alt=""
+              src={logo}
+              alt="Logo"
             />
           </div>
           <div className="flex flex-col gap-2">

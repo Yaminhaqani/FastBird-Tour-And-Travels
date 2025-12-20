@@ -1,4 +1,5 @@
 import { motion } from "motion/react"
+import logo from "@/assets/logo.png";
 const Navbar = () => {
   return (
     <motion.nav
@@ -8,7 +9,7 @@ const Navbar = () => {
      className="w-full h-15 md:h-17.5 flex items-center justify-center overflow-hidden backdrop-blur-md bg-black/10 border-b border-white/20 z-50">
       <img
       className="h-45 w-fit object-contain"
-       src="src/assets/logo.png"
+       src={logo}
         alt="logo"/>
 
     </motion.nav>
