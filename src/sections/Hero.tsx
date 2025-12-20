@@ -3,14 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { Variants } from "motion/react";
+import { heroImages } from "@/data/hero";
 
 const Hero = () => {
-  const heroImages = [
-    "/heroImages/hero1.webp",
-    "/heroImages/hero2.webp",
-    "/heroImages/hero3.webp",
-    "/heroImages/hero4.webp",
-  ];
 
 const containerVariants: Variants = {
   hidden: { opacity: 0, y: -50 },
@@ -49,7 +44,11 @@ const itemVariants: Variants = {
       <AnimatePresence mode="popLayout">
         <motion.img
           key={currentIndex} // Key is vital for AnimatePresence to detect change
-          src={heroImages[currentIndex]}
+          src={heroImages[currentIndex].desktop}
+          srcSet={`${heroImages[currentIndex].mobile} 768w,
+           ${heroImages[currentIndex].tablet} 1280w,
+           ${heroImages[currentIndex].desktop} 1920w`}
+           sizes="100vw"
           alt={`Hero ${currentIndex + 1}`}
           fetchPriority="high"
           className="absolute w-full h-full object-cover"
@@ -63,22 +62,6 @@ const itemVariants: Variants = {
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/15 to-black/40 pointer-events-none" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="space-y-2 absolute top-45 md:top-60 lg:top-48 py-2 md:py-4 left-1/2 -translate-x-1/2 w-[95dvw] lg:w-[60dvw] backdrop-blur-sm bg-black/20 border border-white/10 shadow-xl
-  rounded-3xl"
-        >
-          <h1 className="text-4xl font-play md:text-5xl text-white tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-            Experience Paradise
-          </h1>
-
-          <p className="text-xs tracking-tight md:text-sm text-gray-200/90 max-w-2xl mx-auto font-light drop-shadow-md">
-            Discover the timeless beauty of Kashmir. From the shikaras of Dal
-            Lake to the slopes of Gulmarg.
-          </p>
-        </motion.div> */}
 
         <motion.div
   variants={containerVariants}
@@ -95,7 +78,7 @@ const itemVariants: Variants = {
 
   <motion.p 
     variants={itemVariants}
-    className="text-xs tracking-tight md:text-sm text-gray-200/90 max-w-2xl mx-auto font-light drop-shadow-md"
+    className="text-sm tracking-tight text-gray-200/90 max-w-2xl mx-auto font-light drop-shadow-md"
   >
     Discover the timeless beauty of Kashmir. From the shikaras of Dal Lake to the slopes of Gulmarg.
   </motion.p>

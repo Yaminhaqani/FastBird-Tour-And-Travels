@@ -1,4 +1,3 @@
-
 import { TourCard } from "@/components/TourCard";
 import { cards } from "@/data/card";
 import { motion } from "motion/react";
@@ -10,7 +9,7 @@ const KashmirTours = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center mt-8 text-3xl tracking-tight text-black font-bold"
+        className="text-center mt-8 text-3xl tracking-tight text-gray-900 font-bold"
       >
         Popular Kashmir Tours
       </motion.h1>
