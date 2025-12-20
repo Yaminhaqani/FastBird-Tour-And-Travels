@@ -3,7 +3,7 @@ import { Suspense, lazy } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import Footer from "./sections/Footer";
-import FloatingButton from "./components/floatingButton";
+import FloatingButton from "./components/FloatingButton";
 const KashmirTours = lazy(() => import("./sections/KashmirTours"));
 const HeroTwo = lazy(() => import("./sections/HeroTwo"));
 const TopDestinations = lazy(() => import("./sections/TopDestinations"));
