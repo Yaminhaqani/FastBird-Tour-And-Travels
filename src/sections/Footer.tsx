@@ -71,7 +71,7 @@ const Footer = () => {
               Rajbagh, Srinagar, Kashmir - 190008, India
             </a>
             <a
-              href="mailto:info@speedbird.in"
+              href="mailto:contact@speedbirdtourandtravel.in"
               className="flex items-center text-sm hover:text-amber-600 transition-colors duration-300"
             >
               <span className="mr-2">
