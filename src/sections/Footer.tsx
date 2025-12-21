@@ -77,7 +77,7 @@ const Footer = () => {
               <span className="mr-2">
                 <IoMail />
               </span>
-              speedbirdtourntravels@gmail.com
+               contact@speedbirdtourandtravel.in
             </a>
             <a
               href="tel:+917889757436"
