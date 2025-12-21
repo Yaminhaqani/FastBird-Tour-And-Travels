@@ -5,18 +5,21 @@ type SendButtonProps = {
   label?: string
   className?: string
   type?: "button" | "submit" | "reset"
+  disabled?: boolean
 }
 
 export function SendButton({
   label = "Send",
   className,
   type = "button",
+  disabled = false,
 }: SendButtonProps) {
   return (
     <motion.button
     initial={{opacity: 0, x: 50}}
     whileInView={{opacity: 1, x: 0}}
       type={type}
+       disabled={disabled}
       className={cn(
         // structure (DO NOT hardcode colors here)
         "group relative flex items-center overflow-hidden rounded-2xl",

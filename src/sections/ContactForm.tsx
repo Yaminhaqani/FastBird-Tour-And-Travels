@@ -14,8 +14,20 @@ import { useForm } from "react-hook-form";
 import { motion } from "motion/react";
 import { SendButton } from "@/components/ui/sendButton";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+
+//helper function for form
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 
 const ContactForm = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+const [error, setError] = useState<string | null>(null);
+
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -26,10 +38,39 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = () => {
-    // Netlify handles submission automatically
-    // No fetch, no JS submit needed
-  };
+  const onSubmit = async (data: ContactFormData) => {
+  setSubmitting(true);
+  setSubmitted(false);
+  setError(null);
+
+  try {
+    const res = await fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encode({
+        "form-name": "contact",
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Network error");
+    }
+
+    setSubmitted(true);
+    form.reset();
+  } catch (err) {
+    setError("❌ Failed to send message. Please try again.");
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 
   return (
     <section className=" w-full flex flex-col items-center">
@@ -45,7 +86,7 @@ const ContactForm = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/10 z-0"></div>
-        <div className="relative z10 mt-4 p-2">
+        <div className="relative z-10 mt-4 p-2">
           <Form {...form}>
             <form
               name="contact" //→ Netlify form name
@@ -140,9 +181,21 @@ const ContactForm = () => {
                 )}
               />
 
+              {submitted && (
+                <p className="text-green-400 text-center text-sm">
+                  ✅ Message sent successfully!
+                </p>
+              )}
+              {error && (
+  <p className="text-red-400 text-center text-sm">
+    {error}
+  </p>
+)}
+
               <div className=" w-full flex justify-center">
                 <SendButton
                   type="submit"
+                  disabled={submitting}
                   className="border border-white/40 bg-white/10 text-amber-300/80 hover:bg-white/10 shadow-2xl shadow-amber-400"
                 />
               </div>
