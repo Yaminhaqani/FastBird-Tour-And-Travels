@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <body>
+    <!-- Hidden blueprint form for Netlify because its does'nt detect jsx/tsx files -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
+
