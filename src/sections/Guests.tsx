@@ -14,7 +14,7 @@ const Guests = () => {
           className="text-center"
         >
           <h1 className="text-3xl tracking-tight text-gray-900 font-bold">
-            Our Guests
+            Customer Memories
           </h1>
         </motion.div>
 
